@@ -1,0 +1,195 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn:moo-sodi.ru:commerceml_sodi">
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ВеличинаСтавкиНалога" type="d2p1:ВеличинаСтавкиНалога"/>
+	<property name="ДлительностьОжиданияОтвета" type="xs:duration"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИСО3166" type="d2p1:ИСО3166"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИдОтправителя" type="d2p1:ИдентификаторКонтрагента"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИдПолучателя" type="d2p1:ИдентификаторКонтрагента"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИдТовара" type="d2p1:ИдентификаторТовара"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="Количество" type="d2p1:КоличествоТип"/>
+	<property name="МоментСоздания" type="xs:dateTime"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="Налог" type="d2p1:СтоимостьНалогТип"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="НомерДокумента" type="d2p1:ИдентификаторДокумента"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="НомерИсходногоДокумента" type="d2p1:ИдентификаторДокумента"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКВЭД" type="d2p1:ОКВЭД"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКЕИ" type="d2p1:ОКЕИ"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКП" type="d2p1:ОКП"/>
+	<property name="Примечание">
+		<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="255"/>
+	</property>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="Стоимость" type="d2p1:СтоимостьТип"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="Сумма" type="d2p1:СуммаТип"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ТипНалога" type="d2p1:ТипНалога"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ЗапросКаталога" type="d2p1:ЗапросКаталога"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИдТовараКлиента" type="d2p1:ИдентификаторТовара"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИдТовараПоставщика" type="d2p1:ИдентификаторТовара"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="КаталогТоваров" type="d2p1:КаталогТоваров"/>
+	<property name="Наименование" type="xs:string"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ТоварКРаботе" type="d2p1:ТоварКРаботе"/>
+	<property xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ШтриховойКод" type="d2p1:ИдентификаторТовара"/>
+	<valueType name="ВеличинаСтавкиНалога" base="xs:decimal" variety="Atomic" minInclusive="0" fractionDigits="2"/>
+	<valueType name="ВеличинаСуммыТип" base="xs:decimal" variety="Atomic" totalDigits="18" fractionDigits="2"/>
+	<valueType name="ЗначениеИдентификатора" base="xs:normalizedString" variety="Atomic" maxLength="255" whiteSpace="collapse"/>
+	<valueType name="КодВалютыТип" base="xs:integer" variety="Atomic" totalDigits="3"/>
+	<valueType name="КоличествоТип" base="xs:decimal" variety="Atomic" fractionDigits="3"/>
+	<valueType name="ТипНалога" base="xs:token" variety="Atomic">
+		<enumeration>НДС</enumeration>
+	</valueType>
+	<valueType name="ВесТип" base="xs:decimal" variety="Atomic" fractionDigits="3"/>
+	<valueType name="Габариты" base="xs:decimal" variety="Atomic" fractionDigits="2"/>
+	<valueType name="КратностьТип" base="xs:decimal" variety="Atomic" fractionDigits="3"/>
+	<valueType name="ОбъемТип" base="xs:decimal" variety="Atomic" fractionDigits="3"/>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="GLN" base="d2p1:ИдентификаторКонтрагента">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>\d{13}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="GTIN" base="d2p1:ИдентификаторТовара">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>\d{14}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ДокументИД" base="d2p1:ИдентификаторДокумента">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic" maxLength="80"/>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИННРФ" base="d2p1:ИдентификаторКонтрагента">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9]{10}</pattern>
+				<pattern>[0-9]{12}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ИСО3166" base="d2p1:КлассификаторТип">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9]{3}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="ИдентификаторДокумента" abstract="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="__content" type="d3p1:ЗначениеИдентификатора" form="Text"/>
+	</objectType>
+	<objectType name="ИдентификаторКонтрагента" abstract="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="__content" type="d3p1:ЗначениеИдентификатора" form="Text"/>
+	</objectType>
+	<objectType name="ИдентификаторТовара" abstract="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="__content" type="d3p1:ЗначениеИдентификатора" form="Text"/>
+	</objectType>
+	<objectType name="КлассификаторТип" abstract="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="__content" type="d3p1:ЗначениеИдентификатора" form="Text"/>
+	</objectType>
+	<objectType name="КоммерческийДокумент" open="true" abstract="true" sequenced="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдОтправителя"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдПолучателя"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:НомерДокумента"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:МоментСоздания"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Примечание" lowerBound="0"/>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="КонтрагентИД" base="d2p1:ИдентификаторКонтрагента">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКВЭД" base="d2p1:КлассификаторТип">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9]{2}.[0-9]{2}.[0-9]{2}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКЕИ" base="d2p1:КлассификаторТип">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9]{3}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ОКП" base="d2p1:КлассификаторТип">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic">
+				<pattern>[0-9]{6}</pattern>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="СтоимостьНалогТип">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ТипНалога"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ВеличинаСтавкиНалога"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Сумма"/>
+		<property name="ВключеноВСтоимость" type="xs:boolean"/>
+	</objectType>
+	<objectType name="СтоимостьТип">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="Сумма" type="d3p1:СуммаТип"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="Налог" type="d3p1:СтоимостьНалогТип" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="СуммаТип">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="Валюта" type="d3p1:КодВалютыТип" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="__content" type="d3p1:ВеличинаСуммыТип" form="Text"/>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ТоварИД" base="d2p1:ИдентификаторТовара">
+		<property name="__content" form="Text">
+			<typeDef xsi:type="ValueType" base="d2p1:ЗначениеИдентификатора" variety="Atomic" minLength="1" maxLength="80"/>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ЗапросКаталога" base="d2p1:КоммерческийДокумент" open="true" sequenced="true">
+		<property ref="d2p1:ДлительностьОжиданияОтвета"/>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="КаталогТоваров" base="d2p1:КоммерческийДокумент" open="true" sequenced="true">
+		<property ref="d2p1:НомерИсходногоДокумента" lowerBound="0"/>
+		<property ref="d2p1:ДлительностьОжиданияОтвета"/>
+		<property name="ЭтоПолныйКаталог" type="xs:boolean" lowerBound="0"/>
+		<property name="Товар" type="d2p1:СтрокаКаталога" upperBound="-1"/>
+	</objectType>
+	<objectType name="СтрокаКаталога" open="true" sequenced="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдТовараПоставщика" upperBound="-1"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдТовараКлиента" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ШтриховойКод" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ОКЕИ"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ОКП"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИСО3166"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ОКВЭД" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="КлассификаторТовара" type="d3p1:КлассификаторТип" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Наименование"/>
+		<property name="ТорговаяМарка">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+		<property name="Производитель">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+		<property name="Описание" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic"/>
+		</property>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ВесНетто" type="d3p1:ВесТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ВесБрутто" type="d3p1:ВесТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ВысотаСлояТовара" type="d3p1:Габариты" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ВысотаТовара" type="d3p1:Габариты" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ШиринаТовара" type="d3p1:Габариты" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ГлубинаТовара" type="d3p1:Габариты" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="ОбъемТовара" type="d3p1:ОбъемТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="МинКоличествоДляЗаказа" type="d3p1:КоличествоТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="КоличествоВСлоеНаЕвропалете" type="d3p1:КоличествоТип" lowerBound="0"/>
+		<property name="СрокХранения" type="xs:duration" lowerBound="0"/>
+		<property name="ТемператураХранения" type="xs:integer" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="Кратность" type="d3p1:КратностьТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="КоличесвоЕдиницОбъектаВерхнегоУровня" type="d3p1:КоличествоТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Примечание" lowerBound="0"/>
+	</objectType>
+	<objectType name="СтрокаТовараКРаботе" open="true" sequenced="true">
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдТовараКлиента"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:ИдТовараПоставщика" upperBound="-1"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Наименование"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" name="КоэффициентПересчета" type="d3p1:КратностьТип" lowerBound="0"/>
+		<property xmlns:d3p1="urn:moo-sodi.ru:commerceml_sodi" ref="d3p1:Примечание" lowerBound="0"/>
+	</objectType>
+	<objectType xmlns:d2p1="urn:moo-sodi.ru:commerceml_sodi" name="ТоварКРаботе" base="d2p1:КоммерческийДокумент" open="true" sequenced="true">
+		<property ref="d2p1:НомерИсходногоДокумента"/>
+		<property name="Товар" type="d2p1:СтрокаТовараКРаботе" upperBound="-1"/>
+	</objectType>
+</package>
