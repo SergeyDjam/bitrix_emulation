@@ -107,6 +107,7 @@
 			<Interface>Интерфейс1</Interface>
 			<SessionParameter>ТекущийПользователь</SessionParameter>
 			<Role>SA</Role>
+			<CommonModule>ЭмуляцияБитрикс</CommonModule>
 			<XDTOPackage>CML_3_cat</XDTOPackage>
 			<XDTOPackage>CML_208</XDTOPackage>
 			<HTTPService>api</HTTPService>
@@ -114,6 +115,9 @@
 			<Catalog>Пользователи</Catalog>
 			<Catalog>ФайлыКаталогов</Catalog>
 			<Enum>ФорматКаталога</Enum>
+			<DataProcessor>ES_Manage</DataProcessor>
+			<DataProcessor>ЗагрузкаКаталогаCML</DataProcessor>
+			<InformationRegister>СостояниеОбработкиЗагруженныхФайлов</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
