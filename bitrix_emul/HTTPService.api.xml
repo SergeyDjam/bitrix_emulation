@@ -15,15 +15,15 @@
 		<ChildObjects>
 			<URLTemplate uuid="b25956d5-3ccd-4a8f-ae13-68db56d9595e">
 				<Properties>
-					<Name>root</Name>
+					<Name>bitrixUpload</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Root</v8:content>
+							<v8:content>Bitrix upload</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
-					<Template>/{param1}</Template>
+					<Template>/bitrixUpload</Template>
 				</Properties>
 				<ChildObjects>
 					<Method uuid="ae41a376-fd3f-4616-9608-b3e8f7f3e4e5">
@@ -37,7 +37,7 @@
 							</Synonym>
 							<Comment/>
 							<HTTPMethod>GET</HTTPMethod>
-							<Handler>rootGET</Handler>
+							<Handler>bitrixUploadGET</Handler>
 						</Properties>
 					</Method>
 					<Method uuid="db3d15a7-50d2-4f58-848d-8236bac85272">
@@ -51,10 +51,24 @@
 							</Synonym>
 							<Comment/>
 							<HTTPMethod>POST</HTTPMethod>
-							<Handler>rootPOST</Handler>
+							<Handler>bitrixUploadPOST</Handler>
 						</Properties>
 					</Method>
 				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="3361257a-b4df-4476-8598-c3b61ea62112">
+				<Properties>
+					<Name>main</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Main</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Template>/cat/{GUID}</Template>
+				</Properties>
+				<ChildObjects/>
 			</URLTemplate>
 		</ChildObjects>
 	</HTTPService>

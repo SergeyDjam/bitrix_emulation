@@ -86,7 +86,7 @@
 					<v8:Value xsi:type="xs:boolean">false</v8:Value>
 				</v8:pair>
 			</RequiredMobileApplicationPermissions>
-			<DefaultInterface/>
+			<DefaultInterface>Interface.Интерфейс1</DefaultInterface>
 			<DefaultStyle/>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation/>
